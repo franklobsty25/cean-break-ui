@@ -1,16 +1,13 @@
-# designing
+# Clean Break
 
-A new Flutter project.
+Clean break ui/ux implementation
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Clone the repo
 
-A few resources to get you started if this is your first Flutter project:
+Install dependencies
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Start flutter
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [UI/UX by Nugraha Jati Utama](https://dribbble.com/shots/24442816-Clean-Break-Mobile-App-Design)
