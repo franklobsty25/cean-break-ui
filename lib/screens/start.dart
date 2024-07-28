@@ -38,63 +38,65 @@ class StartScreen extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20))),
-              child: Column(
-                children: [
-                  Text('Welcome to Clean Break',
-                      style: Theme.of(context).primaryTextTheme.titleLarge),
-                  SizedBox(
-                    height: 2.h,
-                  ),
-                  Wrap(alignment: WrapAlignment.spaceAround, children: [
-                    Text(
-                      'You\'r taking the first step towards a',
-                      style: Theme.of(context).primaryTextTheme.bodyMedium,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Text('Welcome to Clean Break',
+                        style: Theme.of(context).primaryTextTheme.titleLarge),
+                    SizedBox(
+                      height: 2.h,
                     ),
-                    Text(
-                      'healthier, smoke-free life. We\'re here to',
-                      style: Theme.of(context).primaryTextTheme.bodyMedium,
+                    Wrap(alignment: WrapAlignment.spaceAround, children: [
+                      Text(
+                        'You\'r taking the first step towards a',
+                        style: Theme.of(context).primaryTextTheme.bodyMedium,
+                      ),
+                      Text(
+                        'healthier, smoke-free life. We\'re here to',
+                        style: Theme.of(context).primaryTextTheme.bodyMedium,
+                      ),
+                      Text(
+                        'support you every step of the way.',
+                        style: Theme.of(context).primaryTextTheme.bodyMedium,
+                      )
+                    ]),
+                    SizedBox(
+                      height: 2.h,
                     ),
-                    Text(
-                      'support you every step of the way.',
-                      style: Theme.of(context).primaryTextTheme.bodyMedium,
-                    )
-                  ]),
-                  SizedBox(
-                    height: 2.h,
-                  ),
-                  DotsIndicator(
-                    dotsCount: 4,
-                    position: 0,
-                    decorator: DotsDecorator(
-                        size: const Size.square(9.0),
-                        activeSize: const Size(20.0, 9.0),
-                        activeShape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0))),
-                  ),
-                  SizedBox(
-                    height: 2.h,
-                  ),
-                  ElevatedButton(
-                    style:
-                        Theme.of(context).elevatedButtonTheme.style!.copyWith(
-                              maximumSize:
-                                  WidgetStateProperty.all(Size(60.w, 15.h)),
-                              padding: WidgetStatePropertyAll(
-                                  EdgeInsets.only(top: 2.h, bottom: 2.h)),
-                            ),
-                    onPressed: () => goToSignup(context),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Get started',
-                          style: Theme.of(context).primaryTextTheme.labelMedium,
-                        ),
-                        const Icon(Icons.arrow_forward, color: Colors.white),
-                      ],
+                    DotsIndicator(
+                      dotsCount: 4,
+                      position: 0,
+                      decorator: DotsDecorator(
+                          size: const Size.square(9.0),
+                          activeSize: const Size(20.0, 9.0),
+                          activeShape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0))),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    ElevatedButton(
+                      style:
+                          Theme.of(context).elevatedButtonTheme.style!.copyWith(
+                                maximumSize:
+                                    WidgetStateProperty.all(Size(60.w, 15.h)),
+                                padding: WidgetStatePropertyAll(
+                                    EdgeInsets.only(top: 2.h, bottom: 2.h)),
+                              ),
+                      onPressed: () => goToSignup(context),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Get started',
+                            style: Theme.of(context).primaryTextTheme.labelMedium,
+                          ),
+                          const Icon(Icons.arrow_forward, color: Colors.white),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           )
