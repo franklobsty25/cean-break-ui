@@ -16,13 +16,33 @@ class _SignupScreenState extends State<SignupScreen> {
   String? passwordError;
 
   void onSubmit() {
-    if (_formKey.currentState!.validate()) {
+    if (emailController.text.isEmpty && passwordController.text.isEmpty) {
+      setState(() {
+        emailError = 'Please enter an email address';
+        passwordError = 'Please enter a password';
+      });
+    } else if (emailController.text.isEmpty) {
+      setState(() {
+        emailError = 'Please enter an email address';
+      });
+    } else if (passwordController.text.isEmpty) {
+      setState(() {
+        passwordError = 'Please enter a password';
+      });
+    } else {
+      setState(() {
+        emailError = null;
+        passwordError = null;
+      });
+
       Navigator.push(
         context,
         PageRouteAnimator(
           child: const PageNavigation(),
           routeAnimation: RouteAnimation.leftToRight,
           curve: Curves.linear,
+          duration: const Duration(milliseconds: 500),
+          reverseDuration: const Duration(milliseconds: 500),
         ),
       );
     }
@@ -201,6 +221,17 @@ class _SignupScreenState extends State<SignupScreen> {
                     setState(() {
                       passwordError =
                           'Please password should be at least 8 characters long';
+                    });
+                  } else if (!RegExp(r'[0-9]').hasMatch(value)) {
+                    setState(() {
+                      passwordError =
+                          'Please password should have at least a number';
+                    });
+                  } else if (!RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%\s-]')
+                      .hasMatch(value)) {
+                    setState(() {
+                      passwordError =
+                          'Please password should contain a ?';
                     });
                   } else {
                     setState(() {
