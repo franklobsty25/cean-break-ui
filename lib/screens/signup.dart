@@ -33,6 +33,8 @@ class _SignupScreenState extends State<SignupScreen> {
       setState(() {
         emailError = null;
         passwordError = null;
+        emailController.text = '';
+        passwordController.text = '';
       });
 
       Navigator.push(
@@ -230,8 +232,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   } else if (!RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%\s-]')
                       .hasMatch(value)) {
                     setState(() {
-                      passwordError =
-                          'Please password should contain a ?';
+                      passwordError = 'Please password should contain a ?';
                     });
                   } else {
                     setState(() {
