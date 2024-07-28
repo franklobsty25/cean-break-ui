@@ -18,7 +18,7 @@ Install dependencies
 
 Start the project with flutter run
 
-Change to dev branch and create your branch from dev here
+Change to dev branch and create your branch from here
 
 Contribute by implementing the ui design below and push your branch
 
